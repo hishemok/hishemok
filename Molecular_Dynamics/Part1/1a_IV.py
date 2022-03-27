@@ -11,4 +11,6 @@ U = lambda r,sigma:4*epsilon*((sigma/r)**(12)-(sigma/r)**(6))
 #therefor i changed r to start at 1.4 to get another view of the potential
 #After that i changed r back to start at 0.9 and changed sigma to 0.95
 plt.plot(r,U(r,sigma))
+plt.xlabel('distance')
+plt.ylabel('potential')
 plt.show()
