@@ -1,26 +1,14 @@
-import numpy as np
 import matplotlib.pyplot as plt
-epsilon , sigma = 1 ,1
-n = 1000
-r = np.linspace(0.9,3,n+1) 
+import numpy as np
 
-def u(r,epsilon ,sigma):
-  u = 4∗epsilon∗( (sigma/r)∗∗12 − (sigma/r)∗∗6 ) 
-  return u
- 
 
-#up until this point the code is from 1a_I.py
+epsilon = 1
+sigma = 1.5
+r = np.linspace(0.9,3,300)
+U = lambda r,sigma:4*epsilon*((sigma/r)**(12)-(sigma/r)**(6))
 
-U_15 = u(r,epsilon,1.5)
-U_095 = u(r,epsilon,0.95)
-plt.subplot(2,1,1)
-plt.plot(r,U_15,label='sigma=1.5')
-plt.xlabel('r')
-plt.ylabel('u(r)')
-plt.legend()
-plt.subplot(2,1,2)
-plt.plot(r,U_095,label='sigma=0.95')
-plt.xlabel('r')
-plt.ylabel('u(r)')
-plt.legend()
+#at first the potential exploded when around r<1.2
+#therefor i changed r to start at 1.4 to get another view of the potential
+#After that i changed r back to start at 0.9 and changed sigma to 0.95
+plt.plot(r,U(r,sigma))
 plt.show()
