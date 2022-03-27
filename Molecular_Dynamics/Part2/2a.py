@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 n = 500
 dt = 0.01
