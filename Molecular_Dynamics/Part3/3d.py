@@ -4,8 +4,6 @@ from numba import njit
 
 n = 500
 dt = 0.01 
-time = np.linspace(0,dt*n,n)
-T = 180/119.7
 
 
 def placement(n_,d):
