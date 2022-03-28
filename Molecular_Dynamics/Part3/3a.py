@@ -31,4 +31,25 @@ for i in range (n-1):
     r[:,i+1,:] = r[:,i,:] + v[:,i,:]*dt - 0.5*a[:,i,:]*dt**2
     v[:,i+1,:] = v[:,i,:] + 0.5*(a[:,i,:] + a[:,i+1,:])*dt
 
+    
+    
+#Plotting the potential as well as the shifted potential
+import matplotlib.pyplot as plt
+
+
+r = np.linspace(2.5,3.5,100)
+
+u = lambda r: 4*(r**(-12)-r**(-6))
+
+shifted = np.zeros(100)
+for i in range(100):
+    if r[i] < 3:
+        shifted[i] = 4*(r[i]**(-12)-r[i]**(-6))
+
+plt.plot(r,u(r),label='U')
+plt.plot(r,shifted,label='U_Shifted')
+plt.xlabel('r')
+plt.ylabel('U(r)')
+plt.legend()
+plt.show()
 
