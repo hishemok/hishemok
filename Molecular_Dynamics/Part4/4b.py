@@ -89,3 +89,32 @@ plt.ylabel('A(t)')
 plt.legend()
 plt.show()
 
+#this is what i used to average it out to create a smoother plot
+
+'''
+Average_auto = np.zeros((25,n))
+
+for run in range(25):
+
+    print(run)
+    a_new, u = calc_acc_pbc(r[:, 0], 3, L)
+    a[:, 0] = a_new
+
+    for i in trange(n-1):
+        func(i, a, v, r, L)
+    
+    v[:,0,:] = v[:,-1,:]
+    r[:,0,:] = r[:,-1,:]
+
+    a_new, u = calc_acc_pbc(r[:, 0], 3, L)
+    a[:, 0] = a_new
+
+    for i in trange(n-1):
+        func(i, a, v, r, L)
+
+    Average_auto[run] = Auto(v)
+    
+
+
+Average_auto_calc = np.mean(Average_auto, axis=(0))
+'''
