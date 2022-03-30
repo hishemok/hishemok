@@ -2,7 +2,7 @@ import numpy as np
 from tqdm import trange
 from numba import njit
 
-n = 300
+n = 500
 dt = 0.01 
 time = np.linspace(0,dt*n,n)
 T = 167.4/119.7
