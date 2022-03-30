@@ -90,6 +90,7 @@ plt.legend()
 plt.show()
 
 #this is what i used to average it out to create a smoother plot
+#as well as finding the diffusion coeffisient
 
 '''
 Average_auto = np.zeros((25,n))
@@ -117,4 +118,8 @@ for run in range(25):
 
 
 Average_auto_calc = np.mean(Average_auto, axis=(0))
+
+D = 1/3*np.trapz(Average_auto_calc)
+print(D)
+
 '''
